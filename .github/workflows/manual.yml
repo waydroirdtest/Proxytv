@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   sync:
@@ -16,7 +17,5 @@ jobs:
 
       - name: Push to GitLab
         run: |
-          git remote add gitlab https://gitlab.com/waydroirdtest/Proxytv.git
+          git remote add gitlab https://oauth2:${{ secrets.GITLAB_TOKEN }}git@gitlab.com:waydroirdtest/Proxytv.git
           git push gitlab main
-        env:
-          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
