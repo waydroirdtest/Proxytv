@@ -17,6 +17,5 @@ jobs:
 
       - name: Push to GitLab
         run: |
-          git remote add g
-          git push gitlab mainitlab https://oauth2:${{ secrets.GITLAB_TOKEN }}git@gitlab.com/waydroirdtest/Proxytv.git
+          git remote add gitlab https://oauth2:${{ secrets.GITLAB_TOKEN }}@gitlab.com/waydroirdtest/Proxytv.git
           git push gitlab main
